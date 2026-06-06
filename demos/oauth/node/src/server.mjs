@@ -9,7 +9,14 @@ import axios from 'axios'
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
-dotenv.config({ path: path.resolve(__dirname, '../.env') })
+const currentEnvPath = path.resolve(__dirname, '../.env')
+const legacyEnvPath = path.resolve(__dirname, '../../oauth-demo/.env')
+
+dotenv.config({ path: currentEnvPath })
+
+if (!process.env.OAUTH_BASE_URL && !process.env.OAUTH_CLIENT_ID && !process.env.OAUTH_CLIENT_SECRET) {
+  dotenv.config({ path: legacyEnvPath, override: false })
+}
 
 const config = {
   port: Number(process.env.PORT || 3200),
@@ -232,7 +239,6 @@ app.post('/logout', async (req, res) => {
       await revokeToken(tokenToRevoke, tokenTypeHint)
     }
   } catch {
-    // best-effort revoke for demo
   }
 
   req.session.destroy(() => {

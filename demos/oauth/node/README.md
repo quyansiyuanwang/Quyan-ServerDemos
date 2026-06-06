@@ -1,6 +1,6 @@
 # OAuth Demo
 
-`demos/oauth-demo` 是一个最小可运行的传统 OAuth 2.0 集成示例，演示如何与本仓库后端的 OAuth 能力对接。
+`demos/oauth/node` 是 `Quyan-ServerSDK` 目录规范下的浏览器可运行 OAuth 示例，演示如何与本仓库后端现有 OAuth 能力完成完整授权码集成。
 
 ## 覆盖流程
 
@@ -75,3 +75,4 @@ pnpm run start
 - 该示例不走 `Auth Center`
 - `/oauth/token` 返回的是 OAuth 风格错误对象，而不是主系统常规 `{ code, message, data }` 包装
 - Access Token 应作为不透明 bearer token 使用，不做前端解析
+- 如果你只需要多语言服务端接入模板，请改看 `sdks/oauth/*`

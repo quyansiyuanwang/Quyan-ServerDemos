@@ -1,0 +1,15 @@
+{
+  "name": "quyan-oauth-sdk-node",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Runnable Node OAuth SDK sample for Quyan-ServerSDK",
+  "scripts": {
+    "dev": "node src/index.mjs",
+    "start": "node src/index.mjs"
+  },
+  "dependencies": {
+    "axios": "^1.13.6",
+    "dotenv": "^16.6.1"
+  }
+}

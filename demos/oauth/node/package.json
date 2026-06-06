@@ -1,9 +1,9 @@
 {
-  "name": "oauth-demo",
+  "name": "quyan-oauth-demo-node",
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "Minimal Node demo for integrating with AppServer traditional OAuth 2.0",
+  "description": "Runnable Node OAuth demo for Quyan-ServerSDK",
   "scripts": {
     "dev": "node --watch src/server.mjs",
     "start": "node src/server.mjs"
